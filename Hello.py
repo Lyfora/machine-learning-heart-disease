@@ -15,36 +15,43 @@
 import streamlit as st
 from streamlit.logger import get_logger
 
+
 LOGGER = get_logger(__name__)
 
 
 def run():
-    st.set_page_config(
-        page_title="Hello",
-        page_icon="👋",
-    )
+  
+  # print(sklearn.__version__)
+  # print("Python version:", sys.version)
 
-    st.write("# Welcome to Streamlit! 👋")
+  st.header("About - Isian Kolom !",divider='rainbow')
+  st.warning("""
+    ## Spesifikasi Data
+    Data akan dibagi atas:
+             
+    1. Gender = Jenis Kelamin
+    2. Umur = Umur Pasien
+    3. Resting Heart-Rate = Detak Jantung saat aktifitas normal
+    4. Maximum Heart Rate = Detak Jantung maksimal seseorang
+    5. Cholesterol = Jumlah kolesterol yang dimiliki seseorang
+    6. Oldpeak (ECG) = perubahan segmen ST yang terjadi setelah aktifitas berat
+    7. Tipe Sakit Dada
+        - ASY : Angina Tidak Stabil
+        - NAP : Non-Anginal Pain / bukan disebabkan karena aliran darah
+        - ATA : Unstable-Angina , sakit di dada yang berkemungkinan serangan jantung
+        - TA  : Aktivitas listrik tidak normal di atrium jantung
+    8. Tipe Resting ECG:
+        - LVH (Left Venticular Hypetrophy) : Otot jantung ventrikel sebelah kiri menebal
+        - ST : Segmen ST Tidak Teratur
+        - Normal : Normal
+    9. Angina : Sakit dada karena aktifitas dengan detak jantung yang tinggi
+    10. ST-Slope : 
+        - Flat : Normal
+        - Up
+        - Down
+    """)
 
-    st.sidebar.success("Select a demo above.")
-
-    st.markdown(
-        """
-        Streamlit is an open-source app framework built specifically for
-        Machine Learning and Data Science projects.
-        **👈 Select a demo from the sidebar** to see some examples
-        of what Streamlit can do!
-        ### Want to learn more?
-        - Check out [streamlit.io](https://streamlit.io)
-        - Jump into our [documentation](https://docs.streamlit.io)
-        - Ask a question in our [community
-          forums](https://discuss.streamlit.io)
-        ### See more complex demos
-        - Use a neural net to [analyze the Udacity Self-driving Car Image
-          Dataset](https://github.com/streamlit/demo-self-driving)
-        - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
-    """
-    )
+    
 
 
 if __name__ == "__main__":
